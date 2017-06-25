@@ -5,24 +5,28 @@ package com.jet.app;
         System.out.println("Welcome, Server!");
     }
 
-     static void sendMessage(){
-        String sendMessageServer;
+     static void sendMessage(String sendMessageServer){
+
     }
 
-     static void receiveMessage(){
-        String receiveMessageServer;
-    }
-     static void historyMessage(){
-        String allMessage;
+     static void receiveMessage(String receiveMessageServer){
+
     }
 
-    static void analiticsMessage(){
-        int messageCount;
+     static void getAllMesseges(String allMessage){
+
     }
+
+    static void analiticsMessage(int messageCount){
+
+    }
+
     static void logChat(){
 
     }
 
+    static void commands(){
 
+    }
 }
 
