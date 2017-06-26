@@ -1,6 +1,9 @@
 package com.jet.edu;
 
 
+import static com.jet.edu.Calculator.add;
+import static com.jet.edu.Calculator.addToMemory;
+import static com.jet.edu.Calculator.getMemory;
 import static com.jet.edu.Chat.start;
 
 /**
@@ -43,6 +46,7 @@ class ChatRunner {
 class Calculator {
     public static final int MY_SUPER_CONST = 0;
 
+
     /**
      * @param a
      * @param b
@@ -52,12 +56,28 @@ class Calculator {
         return a + b;
     }
 
-
+    public static void addToMemory() {}
+    public static void clearMemory() {}
+    public static void getMemory() {}
 }
 
 class CalculatorRunner {
     public static void main(String[] args) {
-        System.out.println(Calculator.add(1, 1));
+        getMemory(); //==0
+
+        add(1,1);
+        getMemory();//==0
+
+        add(1,1);
+        addToMemory();
+        getMemory();//==2
+
+        add(1,1);
+        getMemory();//==0
+        addToMemory();
+        getMemory();//==2
+
+
     }
 }
 
