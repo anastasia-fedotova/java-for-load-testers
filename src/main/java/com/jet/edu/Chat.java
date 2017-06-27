@@ -43,7 +43,7 @@ class ChatRunner {
 /**
  *
  */
-class Calculator {
+class CalculatorDemo {
     public static final int MY_SUPER_CONST = 0;
 
 
