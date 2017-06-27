@@ -19,7 +19,7 @@ class CalculatorApp {
         Calculator.addToMemory();
         Calculator.getMemory();
 
-        Calculator.memory = 5;
-        System.out.println(Calculator.memory);
+//        Calculator.memory = 5;
+//        System.out.println(Calculator.memory);
     }
 }

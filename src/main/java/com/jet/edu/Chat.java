@@ -1,7 +1,6 @@
 package com.jet.edu;
 
 
-import static com.jet.edu.Calculator.add;
 import static com.jet.edu.Calculator.addToMemory;
 import static com.jet.edu.Calculator.getMemory;
 import static com.jet.edu.Chat.start;
@@ -35,7 +34,7 @@ class ChatRunner {
         System.out.println(port);
 
 
-        int result = superFunction(arg1, a2, a3);
+//        int result = superFunction(arg1, a2, a3);
     }
 }
 
@@ -65,14 +64,14 @@ class CalculatorRunner {
     public static void main(String[] args) {
         getMemory(); //==0
 
-        add(1,1);
+//        add(1,1);
         getMemory();//==0
 
-        add(1,1);
+//        add(1,1);
         addToMemory();
         getMemory();//==2
 
-        add(1,1);
+//        add(1,1);
         getMemory();//==0
         addToMemory();
         getMemory();//==2
