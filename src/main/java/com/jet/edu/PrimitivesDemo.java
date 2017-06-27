@@ -9,9 +9,6 @@ public class PrimitivesDemo {
         short s = 07; //-32000..32000
         int i = 0xA;
         long l = 9999999999999L;
-
-//        b = s;
-//        s = b;
         //endregion
 
         //region Плавающая точка
@@ -26,6 +23,11 @@ public class PrimitivesDemo {
         //region Символ
         char c = '\u1234'; //'\n'; //File.separator
         System.out.println("1" + c + "2");
+        //endregion
+
+        //region Ссылочные типы
+        String ss = new String();
+        ss = null;
         //endregion
 
     }
