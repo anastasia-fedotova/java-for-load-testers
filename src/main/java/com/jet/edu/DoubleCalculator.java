@@ -52,6 +52,8 @@ class DoubleCalculatorRunner {
             true ? "1" : "2"
         );
         //endregion
+
+        System.out.println(2 >>> 1); //01, 10 =
     }
 
     public static boolean f1() {
