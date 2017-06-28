@@ -68,12 +68,12 @@ class CalculatorRunner {
         getMemory();//==0
 
 //        add(1,1);
-        addToMemory();
+//        addToMemory();
         getMemory();//==2
 
 //        add(1,1);
         getMemory();//==0
-        addToMemory();
+//        addToMemory();
         getMemory();//==2
 
 
