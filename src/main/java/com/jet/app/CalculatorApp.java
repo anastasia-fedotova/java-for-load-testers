@@ -3,43 +3,43 @@ package com.jet.app;
 
 public class CalculatorApp {
     public static void main(String[] args) {
+        //childCheckRun();
+        calcAddInt();
         calcAdd();
         calcSub();
         calcDiv();
         calcMult();
-
-        //System.out.println(Calculator.add(-1, 0));
-        //System.out.println(Calculator.sub(2, 1));
-        //System.out.println(Calculator.mSumma(2));
-        //System.out.println(Calculator.mSumma(2));
-        //System.out.println(Calculator.mSumma(Calculator.add(2, 3)));
-        //System.out.println(Calculator.mSumma(Calculator.sub(2, 1)));
-        //System.out.println(Calculator.div(4, 2));
-        //System.out.println(Calculator.mSumma(Calculator.add(3, 7)));
-
+        calcMod();
 
     }
-
-    private static void calcAdd() {
-        System.out.println(Calculator.add(-1, 0));
+    /*private static void childCheckRun(){
+        Calculator.childCheck(-12,100);
+    }
+*/
+    private static void calcAddInt(){
+        System.out.println("Add = " + Calculator.add(Calculator.childCheck_a(-11),(Calculator.childCheck_b( 0))));
         Calculator.getSum();
-        //System.out.println(Calculator.sum);
     }
 
-    private static void calcSub() {
-        System.out.println(Calculator.sub(2, 2));
+    private static void calcAdd(){
+        System.out.println("AdD = " + Calculator.add(Calculator.childCheck_a(-11.3),(Calculator.childCheck_b( 0.9))));
         Calculator.getSum();
-        //System.out.println(Calculator.sum);
+    }
 
-    }
-    public static void calcDiv(){
-        System.out.println(Calculator.div(6, 3));
+    private static void calcSub(){
+        System.out.println("Sub = " + Calculator.sub(Calculator.childCheck_a(-9),(Calculator.childCheck_b( 0))));
         Calculator.getSum();
-        //System.out.println(Calculator.sum);
     }
-    public static void calcMult(){
-        System.out.println(Calculator.mult(5, 7));
+    private static void calcDiv(){
+        System.out.println("Div = " + Calculator.div(Calculator.childCheck_a(-1),(Calculator.childCheck_b( 2))));
         Calculator.getSum();
-        //System.out.println(Calculator.sum);
     }
+    private static void calcMult(){
+        System.out.println("Mlt = " + Calculator.mult(Calculator.childCheck_a(-2),(Calculator.childCheck_b( 100))));
+        Calculator.getSum();
+    }
+    private static void calcMod(){
+        System.out.println("MOD = " + Calculator.mod(Calculator.childCheck_a(-2)));
+    }
+
 }
