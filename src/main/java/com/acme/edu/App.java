@@ -1,34 +1,32 @@
 package com.acme.edu;
 
+import static java.lang.Integer.decode;
+import static java.lang.Integer.parseInt;
+
 public class App {
     public static void main( String[] args ) {
-        System.out.println(div(0, 2));
+        String command = "";
+        String arg1 = "";
+        String arg2 = "";
+        int position = 0;
+
+        for (String current : args) {
+            switch (position++) {
+                case 0: command = current; break;
+                case 1: arg1 = current; break;
+                case 2: {
+                    arg2 = current;
+                    doCalculate(command, parseInt(arg1), parseInt(arg2));
+                    position = 0;
+                }
+            }
+        }
+        //java -cp ???.jar CalculatorRunner add 1 1 div 1 0 mul 1 5
     }
 
-    public static int div(int a, int b) { // ищем и возвращаем частное переменных
-        if (b == 0) {
-            return 0;
-        } else if (b < 0) {
-            System.out.println("");
-        } else {
-            System.out.println("");
-        }
-
-        switch (b) { //byte, short, int, char, String, enum
-            case 0 : {
-                System.out.println("0");
-            } break;
-            case 1 : System.out.println("1"); break;
-            case -1 : System.out.println("-1"); break;
-            default : System.out.println("other");
-        }
-
-//        System.out.println("aaaa");
-//        System.out.println("bbbbb");
-
-        return a / b; //int: ArithmeticException; Double.POSITIVE_INFINITY | Double.NaN
+    private static void doCalculate(String command, int arg1, int arg2) {
+        System.out.println(
+            "Calculating: " + command + " with " + arg1 + ", " + arg2
+        );
     }
-
-
-
 }
