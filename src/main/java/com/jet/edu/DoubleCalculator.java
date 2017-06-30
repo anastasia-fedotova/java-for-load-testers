@@ -1,5 +1,7 @@
 package com.jet.edu;
 
+import sun.misc.resources.Messages_it;
+
 import static com.jet.edu.DoubleCalculator.div;
 
 public class DoubleCalculator {
@@ -22,6 +24,11 @@ public class DoubleCalculator {
 
 class DoubleCalculatorRunner {
     public static void main(String[] args) {
+        MyInt ref1 = new MyInt();
+        MyInt ref2 = ref1;
+        ref1.setMyInt(1);
+        ref2.getMyInt();
+
         //region Arithmetic operators
         System.out.println(div(-1, 3.));
         System.out.println("1" + (1 + 1) + ("1" + "1"));
