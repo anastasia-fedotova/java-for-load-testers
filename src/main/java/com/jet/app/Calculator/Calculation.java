@@ -7,12 +7,13 @@ package com.jet.app.Calculator;
 class Calculation {
     private static double mButton = 0;
     private static double storeCalculation = 0;
+    private static StringBuilder print = new StringBuilder("");
 
     private static double checkRange(double a) {
         if ((a > -10.0) & (a < 10.0)) {
             return a;
         } else {
-            System.out.println("Параметр выходит за границу, значение присвоено 10.0");
+            System.out.println("Параметр выходит за границу, значение присвоено 9.0");
             return 10.0;
         }
     }
@@ -29,7 +30,6 @@ class Calculation {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a + b;
-        System.out.println("Сумма: " + mButton);
         return a + b;
     }
 
@@ -37,7 +37,6 @@ class Calculation {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a - b;
-        System.out.println("Вычитание: " + mButton);
         return a - b;
     }
 
@@ -45,7 +44,6 @@ class Calculation {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a * b;
-        System.out.println("Умножение: " + mButton);
         return a * b;
     }
 
@@ -54,7 +52,6 @@ class Calculation {
         b = checkRange(b);
         b = checkZeroDiv(b);
         mButton = a / b;
-        System.out.println("Деление: " + mButton);
         return a / b;
     }
 
@@ -63,6 +60,15 @@ class Calculation {
             return -module;
         }
         return module;
+    }
+
+    static void addToLog(String metod, double a, double b, double buf){
+        StringBuilder str  = new StringBuilder().append(a).append(" ").append(metod).append(" ").append(b).append(" = ").append(buf);
+        print.append(str).append("\n");
+    }
+
+    static StringBuilder getAllLogMessages(){
+        return print;
     }
 
     static void setmButton() {
