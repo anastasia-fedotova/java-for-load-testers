@@ -2,17 +2,16 @@ package com.acme.edu;
 
 public class ArraysDemo {
     public static void main(String... args) {
-       sum(1,1);
-       sum(1,1,1,1,1,1,1);
-       sum(1);
-    }
+        String str = new String("a,bc,d,ef");
+        str.split(",");
 
-    public static int sum(int arg, int ...args) {
-        int result = 0;
-        for (int current : args) {
-            result += current;
-        }
+        String s1 = "a";
+        String s2 = "a";
+        System.out.println(s1 == s2);
 
-        return result;
+        s1.toUpperCase();
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s1.toUpperCase());
     }
 }
