@@ -1,22 +1,18 @@
 package com.acme.edu;
 
 public class ArraysDemo {
-    public static void main(String[] args) {
-        int[] array = new int[5];
-        array[0] = 5;
+    public static void main(String... args) {
+       sum(1,1);
+       sum(1,1,1,1,1,1,1);
+       sum(1);
+    }
 
-        System.out.println(array.length);
+    public static int sum(int arg, int ...args) {
+        int result = 0;
+        for (int current : args) {
+            result += current;
+        }
 
-        String[] stringArray = {"", "rr"};
-        int[] intArray = {1,2,3};
-
-        int[][] matrix = {
-            {1,2},
-            {2,3,4}
-        };
-        System.out.println(matrix[1][3]);
-
-        int[][] intMatrix = new int[5][3];
-        System.out.println(intMatrix[0][1]);
+        return result;
     }
 }
