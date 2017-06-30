@@ -13,5 +13,17 @@ public class ArraysDemo {
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(s1.toUpperCase());
+
+        StringBuffer sbf;
+        StringBuilder sbd;
+        sbd = new StringBuilder("abc");
+        sbd.append("A");
+        sbd.append("A");
+        sbd.append("A");
+        sbd.append("A");
+        sbd.append("A");
+        sbd.append("A");
+
+        sbd.append("B").append("c").append("D"); //Fluent API, interface
     }
 }
