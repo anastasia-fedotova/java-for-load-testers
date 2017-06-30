@@ -2,28 +2,15 @@ package com.acme.edu;
 
 public class ArraysDemo {
     public static void main(String... args) {
-        String str = new String("a,bc,d,ef");
-        str.split(",");
+        Integer variable = new Integer(5); //boxing
+        variable.intValue(); //unboxing
+        Integer.parseInt("45");
 
-        String s1 = "a";
-        String s2 = "a";
-        System.out.println(s1 == s2);
+        Integer i = 5; //auto boxing
+        int ii = i; //auto unboxing
 
-        s1.toUpperCase();
-        System.out.println(s1);
-        System.out.println(s2);
-        System.out.println(s1.toUpperCase());
-
-        StringBuffer sbf;
-        StringBuilder sbd;
-        sbd = new StringBuilder("abc");
-        sbd.append("A");
-        sbd.append("A");
-        sbd.append("A");
-        sbd.append("A");
-        sbd.append("A");
-        sbd.append("A");
-
-        sbd.append("B").append("c").append("D"); //Fluent API, interface
+        Integer i1 = 127; //+intern
+        Integer i2 = 127;
+        System.out.println(i1 == i2); //NNNOOOOOOOOO!!!!!! WTF?????
     }
 }
