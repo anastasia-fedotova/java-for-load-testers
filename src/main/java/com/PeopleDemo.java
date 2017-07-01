@@ -13,7 +13,13 @@ public class PeopleDemo {
         h2.setAge(35);
         System.out.println(h2.getAge());
 
+        h1.setAge(200);
 
+        doCalculate(calc1, "add", "1", "2");
+    }
+
+    public static void doCalculate(Calculator calc, String comm, String arg1, String arg2) {
+        calc.doCalculate(comm, parseDouble(arg1), parseDouble(arg2));
     }
 }
 
