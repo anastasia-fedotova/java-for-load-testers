@@ -1,10 +1,10 @@
 package com.oop;
 
-public class OoadCalculator {
-    private CalculatorLogger log;
+public class Calculator {
+    private CalculatorHistory log;
 
     //Dependency Injection: setter injection
-    public void setLog(CalculatorLogger log) {
+    public void setLog(CalculatorHistory log) {
         this.log = log;
     }
 
@@ -17,6 +17,4 @@ public class OoadCalculator {
     public String[] getLog() {
         return log.getLog();
     }
-
-
 }

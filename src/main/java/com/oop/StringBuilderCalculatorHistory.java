@@ -1,6 +1,6 @@
 package com.oop;
 
-public class StringBuilderCalculatorLogger implements CalculatorLogger {
+public class StringBuilderCalculatorHistory implements CalculatorHistory {
     private StringBuilder log = new StringBuilder();
 
     public String[] getLog() {

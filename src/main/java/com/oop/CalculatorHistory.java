@@ -1,6 +1,6 @@
 package com.oop;
 
-public interface CalculatorLogger {
+public interface CalculatorHistory {
     public void addToLog(String command);
     public String[] getLog();
 }
