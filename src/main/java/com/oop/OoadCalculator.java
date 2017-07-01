@@ -1,8 +1,13 @@
 package com.oop;
 
 public class OoadCalculator {
-    //Abstract Factory
-    private CalculatorLogger log = CalcLoggerFactoryFactory.createFactory().createLogger();
+    private CalculatorLogger log;
+
+    //Dependency Injection: setter injection
+    public void setLog(CalculatorLogger log) {
+        this.log = log;
+    }
+
 
     public int add(int a, int b) {
         log.addToLog(a + " add " + b);
@@ -12,4 +17,6 @@ public class OoadCalculator {
     public String[] getLog() {
         return log.getLog();
     }
+
+
 }

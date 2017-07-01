@@ -3,9 +3,10 @@ package com.oop;
 public class OoadCalculatorDemo {
     public static void main(String[] args) {
         OoadCalculator calc1 = new OoadCalculator();
+        calc1.setLog(new myloggerSTUUUUUUUUBBBBBBB !!!!!!!1111);
+
         OoadCalculator calc2 = new OoadCalculator();
-        calc1.setId(1);
-        calc2.setId(2);
+        calc2.setLog(new LimitedArrayCalculatorLogger()); //DI
 
         calc1.add(1, 1);
         calc1.add(2, 2);
@@ -14,10 +15,10 @@ public class OoadCalculatorDemo {
         calc2.add(4, 4);
 
         for (String logEntry : calc1.getLog()) {
-            System.out.println(calc1.getId() + " : " + logEntry);
+            System.out.println(logEntry);
         }
         for (String logEntry : calc2.getLog()) {
-            System.out.println(calc2.getId() + " : " + logEntry);
+            System.out.println(logEntry);
         }
 
         //TODO:
