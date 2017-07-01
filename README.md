@@ -499,3 +499,6 @@
 
 #### Lab: Integration testing for client
 - Implement integration test for client with server test doubler
+
+# Reading List
+[To Read](http://tinyurl.com/skilltrekreadinglist)
