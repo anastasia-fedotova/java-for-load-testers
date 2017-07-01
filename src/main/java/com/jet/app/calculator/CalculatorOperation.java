@@ -1,13 +1,18 @@
 /**
- * реализация методов сложения, вычитания, деления, умножения калькулятора
- * проверка на входящее значение от -10 до 10, модуль числа, проверка деления на 0
+ * Add Sub Mul Div
+ * Module number
+ * Range from -10 to 10
+ * Check div by 0
+ * Memory Button
  */
-package com.jet.app.Calculator;
+package com.jet.app.calculator;
 
-class Calculation {
-    private double mButton = 0;
+import static java.lang.Double.parseDouble;
+
+class CalculatorOperation {
+    private double memoryButton = 0;
     private double storeCalculation = 0;
-    private LogMessages log = new LogMessages();
+    private CalculatorLogger log = new LogHistory();
 
     private double checkRange(double a) {
         if ((a > -10.0) & (a < 10.0)) {
@@ -29,21 +34,21 @@ class Calculation {
     private double add(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
-        mButton = a + b;
+        memoryButton = a + b;
         return a + b;
     }
 
     private double sub(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
-        mButton = a - b;
+        memoryButton = a - b;
         return a - b;
     }
 
     private double mul(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
-        mButton = a * b;
+        memoryButton = a * b;
         return a * b;
     }
 
@@ -51,7 +56,7 @@ class Calculation {
         a = checkRange(a);
         b = checkRange(b);
         b = checkZeroDiv(b);
-        mButton = a / b;
+        memoryButton = a / b;
         return a / b;
     }
 
@@ -62,7 +67,7 @@ class Calculation {
         return module;
     }
 
-    public double doCalculate(String command, double arg1, double arg2) {
+    double doCalculate(String command, double arg1, double arg2) {
 
         switch (command) {
             case "add":
@@ -81,19 +86,38 @@ class Calculation {
         log.addToLog(metod, a, b, buf);
     }
 
-    public StringBuilder showLog() {
-        return log.getAllLogMessages();
+    public String[] showLog() {
+        return log.getLog();
     }
 
-    void setmButton() {
-        storeCalculation = mButton;
+    void setMemoryButton() {
+        storeCalculation = memoryButton;
     }
 
-    double getmButton() {
+    double getMemoryButton() {
         return storeCalculation;
     }
 
-    void mPlusbutton() {
-        storeCalculation = mButton + storeCalculation;
+    void memoryPlusButton() {
+        storeCalculation = memoryButton + storeCalculation;
+    }
+
+    void operation(CalculatorOperation calc, String command, String arg1, String arg2) {
+        double buffer;
+
+        buffer = calc.doCalculate(
+                command,
+                parseDouble(arg1),
+                parseDouble(arg2));
+
+        calc.addToLog(
+                command,
+                parseDouble(arg1),
+                parseDouble(arg2),
+                buffer);
+    }
+
+    public void setLog(CalculatorLogger log){
+        this.log = log;
     }
 }
