@@ -1,15 +1,15 @@
 /**
- * реализация функций калькулятора
+ * реализация методов сложения, вычитания, деления, умножения калькулятора
+ * проверка на входящее значение от -10 до 10, модуль числа, проверка деления на 0
  */
-
 package com.jet.app.Calculator;
 
 class Calculation {
-    private static double mButton = 0;
-    private static double storeCalculation = 0;
-    private static StringBuilder print = new StringBuilder("");
+    private double mButton = 0;
+    private double storeCalculation = 0;
+    private LogMessages log = new LogMessages();
 
-    private static double checkRange(double a) {
+    private double checkRange(double a) {
         if ((a > -10.0) & (a < 10.0)) {
             return a;
         } else {
@@ -18,7 +18,7 @@ class Calculation {
         }
     }
 
-    private static double checkZeroDiv(double a) {
+    private double checkZeroDiv(double a) {
         if (a == 0) {
             System.out.println("Деление на 0 невозможно > a = infinity");
             return Double.POSITIVE_INFINITY;
@@ -26,28 +26,28 @@ class Calculation {
         return a;
     }
 
-    static double add(double a, double b) {
+    private double add(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a + b;
         return a + b;
     }
 
-    static double sub(double a, double b) {
+    private double sub(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a - b;
         return a - b;
     }
 
-    static double mul(double a, double b) {
+    private double mul(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
         mButton = a * b;
         return a * b;
     }
 
-    static double div(double a, double b) {
+    private double div(double a, double b) {
         a = checkRange(a);
         b = checkRange(b);
         b = checkZeroDiv(b);
@@ -55,31 +55,45 @@ class Calculation {
         return a / b;
     }
 
-    static double abs(double module) {
+    private double abs(double module) {
         if (module < 0) {
             return -module;
         }
         return module;
     }
 
-    static void addToLog(String metod, double a, double b, double buf){
-        StringBuilder str  = new StringBuilder().append(a).append(" ").append(metod).append(" ").append(b).append(" = ").append(buf);
-        print.append(str).append("\n");
+    public double doCalculate(String command, double arg1, double arg2) {
+
+        switch (command) {
+            case "add":
+                return add(arg1, arg2);
+            case "sub":
+                return sub(arg1, arg2);
+            case "mul":
+                return mul(arg1, arg2);
+            case "div":
+                return div(arg1, arg2);
+        }
+        return 0;
     }
 
-    static StringBuilder getAllLogMessages(){
-        return print;
+    void addToLog(String metod, double a, double b, double buf) {
+        log.addToLog(metod, a, b, buf);
     }
 
-    static void setmButton() {
+    public StringBuilder showLog() {
+        return log.getAllLogMessages();
+    }
+
+    void setmButton() {
         storeCalculation = mButton;
     }
 
-    static double getmButton() {
+    double getmButton() {
         return storeCalculation;
     }
 
-    static void mPlusbutton() {
+    void mPlusbutton() {
         storeCalculation = mButton + storeCalculation;
     }
 }
