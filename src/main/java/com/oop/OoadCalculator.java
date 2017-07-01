@@ -1,8 +1,7 @@
 package com.oop;
 
 public class OoadCalculator {
-    //Creator
-    private CalculatorLogger log = new StringBuilderCalculatorLogger();
+    private CalculatorLogger log = CalculatorLoggerFactory.create(); //Factory Method
 
     public int add(int a, int b) {
         log.addToLog(a + " add " + b);
