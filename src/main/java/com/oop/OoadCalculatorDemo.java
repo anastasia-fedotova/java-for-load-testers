@@ -19,5 +19,11 @@ public class OoadCalculatorDemo {
         for (String logEntry : calc2.getLog()) {
             System.out.println(calc2.getId() + " : " + logEntry);
         }
+
+        //TODO:
+        //1. Calc -> OOADCalc, DoD: >=2 instances
+        //2*. Extract class with ops history
+        //
+
     }
 }

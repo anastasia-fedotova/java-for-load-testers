@@ -24,9 +24,13 @@ public class App {
         //java -cp ???.jar CalculatorRunner add 1 1 div 1 0 mul 1 5
     }
 
-    private static void doCalculate(String command, int arg1, int arg2) {
-        System.out.println(
-            "Calculating: " + command + " with " + arg1 + ", " + arg2
-        );
+    private static void doCalculate(String command, int... args) {
+        System.out.print("Calculating: " + command + " with ");
+
+        for (int currentArgument : args) {
+            System.out.print(currentArgument + ", ");
+        }
+
+        System.out.println();
     }
 }
