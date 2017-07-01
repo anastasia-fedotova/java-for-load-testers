@@ -230,22 +230,10 @@
 - Encapsulation
 - Polymorphism
 
-## Demo for new way of designing
-- Visibility as key for encapsulation
-- Inheritance vs Delegation as code reuse styles
-- Polymorphism as key for supportability
-- Stateful and stateless design
-- Metrics of OOAD: Coupling and Cohesion
-
 ## Java Syntax for OOP (8/2)
 ### Enums
-- Enums emulation with _class_
-- Final modifier: three semantics 
 - Enums syntax
 - Using with _switch_
-
-#### Lab: Commands as enums
-- Implement command system as enums 
 
 ### Encapsulation
 - Access modifiers
@@ -257,207 +245,33 @@
 - Constructors
 - Object Initializers
 
-#### Lab: Commands as classes
-- Implement command system as objects
-
 ### Inheritance
 - Inheritance implementation
 - Code reuse with _super_
 - Overriding methods
-- Overriding constraints
-- Constructors with inheritance issue
 - Abstract classes
-- Template Method design pattern
-
-#### Lab: Commands as classes
-- Reuse code with TM pattern
-
-### Interfaces
-- Interface vs Class
-- Implementation
-- Multiple implementation
-- Default modifiers for fields and methods
-- Static and default (defender) methods
-
-### Polymorphism: design big picture
-- Polymorphic collections
-- Polymorphic arguments
-- Polymorphic algorithms
-- Type casting
-- Sate/Strategy design patterns
-
-#### Lab: Commands as classes
-- Implement command system as State pattern
-
-### Creational Patterns
-- Creator
-- Factories: factory method, simple factory, abstract factory
-- DI
-
-#### Lab: System testability 
-- Implement DI for main components
-
-## Generics (1/0.5)
-- Generics as design style
-- Type safety
-- Generic classes
-- Generic methods
-
-## Intro to Functional Style (2/0)
-### Old-school
-- Nested Classes
-- Inner classes
-- Local classes
-- Anonymous classes
-
-### New way
-- Closures in java
-- Lambdas
-- Functional Interfaces
-- Functional style: state, function composition, declarative, immutability
 
 ## Error handling with exceptions (3/1)
 - Exceptions vs Error codes
 - What is exception
 - Exception handling
 - Standard Java exception types
-- Designing own exception types system
-
-#### Lab: Fail-over for system
-- Implement exceptions type system and recovery
-
-## System library (2/1)
-- System
-- Runtime
-- Math
 
 ### Object
 - toS
-- hashCode and equals, their contract 
-
-#### Lab: Messages as classes
-- Implement messages with toS, eq, hc
 
 ## Annotations and Reflection API intro (1/0)
 - Annotations
-- Purpose of annotations
-- Built-in annotations
-- Custom annotations
 - Reflection API overview
-- Class loaders
-- Class introspection
 
 ## Collection API (3/1)
 - Collection types and implementations
 - Iteration over collections
-- Comparable and Comparator
-- Maps and implementations
-- Utility classes Collections and Arrays
-
-#### Lab: Multi-user application with collections
-- Implement chat rooms
-
-- Stream API
-
-#### Lab: Multi-user application with collections
-- Implement chat rooms with stream API
-
-- Queues
-
-#### Lab: implement async request handling
-- Queue as incoming request buffer
-
-## Unit testing with JUnit (6/2)
-- Assertions in Java
-
-### Unit testing
-- Testing scopes
-- Unit tests
-- Structure of unit test
-- Tests and contract
-- JUnit
-
-### Assertions
-- Hamcrest and FEST-assert
-
-### Test doubles
-- Test doubles types
-- Mockito
-
-### Coverage
-- Types of coverage (including permutation)
-- Coverage tools
-
-### TDD and ATDD
-- Intro to TDD
-- Intro to ATDD
-
-#### Lab: Test coverage
-- Unit tests coverage ≥ 50%
-
-## IO (6/2)
-### File IO
-- java.io.File
-- RandomAccessFile
-- Stream classes
-- InputStreams and OutputStreams
-- Readers and Writers
-- Stream chaining
-
-#### Lab: Client application
-- Implement client application console IO
-
-### Serialization API
-- Serializable
-- Serialization API
-
-### Network IO
-- Network API
-- Sockets and ServerSocket API
-- Welcome to hell no.1! CAP theorem
-
-#### Lab: Client-server architecture 
-- Implement network transport
-
-### Intro to non-blocking/async IO
-- Why async IO?
-- Key concepts of NIO2
 
 ## Multi-threading in Java (8/3)
 ### Parallelism
 - Thread definition
-- Thread start: 3 options
-- Thread states begin
-- Priorities
-- Daemons
 - Thread API
-- Blocking operations
-- Thread states at whole
-
-#### Lab: Multi-user application
-- Implement parallel client connection and handling
-
-### [Server IO Design Patterns](https://www.dre.vanderbilt.edu/%7Eschmidt/PDF/OOCP-tutorial4.pdf)
-- Connector/Acceptor
-- Proxy
-- Pro-actor
-- Handler
-
-### Concurrency
-- Welcome to hell no.2! Concurrency.
-- Thread safety and data race
-- Thread synchronization
-- _synchronized_ section
-- Lock API
-- New thread states
-- Objects thread safety: collections example
-- wait() / notify()
-- Deadlocks
-- Intro to java.util.concurrent
-- Welcome to hell no.3! JMM.
-
-#### Lab: Data correctness
-- Implement thread-safe multi-user application
 
 ## Web Services (6/2)
 - Key concepts
@@ -468,37 +282,6 @@
 ### SOAP services intro
 - SOAP
 - WSDL
-
-### REST services intro
-- HTTP operations
-- JSON payload
-- REST API concept
-- API Documenting
-
-### Writing REST services in java
-- JSR 311: Java API for RESTful services
-- REST framework implementations
-- JSR reference implementation
-- JSON to Java mappers
-
-### Calling REST services
-- DII vs SII concepts
-- Service stubs
-- Implementing calls with JSR 
-
-#### Lab: REST transport
-- Refactor own client-server protocol to REST
-
-## Test doubles for REST services (2/1)
-- System integration concepts
-- Integration testing
- 
-### Implementing integration tests with WireMock
-- Test structure
-- WireMock API
-
-#### Lab: Integration testing for client
-- Implement integration test for client with server test doubler
 
 # Reading List
 [To Read](http://tinyurl.com/skilltrekreadinglist)
