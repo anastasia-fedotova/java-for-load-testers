@@ -1,6 +1,8 @@
 package com.oop;
 
+@RolesAllowed({"admin", "root"})
 public class Calculator {
+    @Inject
     private CalculatorLog log;
 
     //DI: constructor injection
@@ -13,6 +15,8 @@ public class Calculator {
         return a + b;
     }
 
+    @Transactional
+    @Retry(count = 7)
     public String[] getLog() {
         return log.getLog();
     }
