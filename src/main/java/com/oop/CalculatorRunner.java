@@ -9,8 +9,8 @@ public class CalculatorRunner {
          * 2. DI for StringBuilder
          */
 
-//        calculator.add(1, 1);
-//        calculator.add(2, 2);
+        calculator.add(1, 1);
+        calculator.add(2, 2);
 
         try {
             System.out.println("try entering");
@@ -18,8 +18,6 @@ public class CalculatorRunner {
             System.out.println("try exiting");
             ///
         } catch (ArithmeticException | NullPointerException e) {
-
-        } catch (Exception e) {
 
         } finally {
 
