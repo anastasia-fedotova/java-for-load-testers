@@ -1,8 +1,6 @@
 package com.oop;
 
-@RolesAllowed({"admin", "root"})
 public class Calculator {
-    @Inject
     private CalculatorLog log;
 
     //DI: constructor injection
@@ -10,14 +8,17 @@ public class Calculator {
         this.log = log;
     }
 
-    public int add(int a, int b) {
+    public int add(int a, int b) throws Exception {
         log.addToLog(a + " add " + b);
         return a + b;
     }
 
-    @Transactional
-    @Retry(count = 7)
     public String[] getLog() {
         return log.getLog();
+    }
+
+    public int div(int a, int b) throws Exception {
+        log.addToLog(a + " div " + b);
+        return a / b;
     }
 }
