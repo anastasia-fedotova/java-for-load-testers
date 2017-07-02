@@ -1,6 +1,9 @@
 package com.oop;
 
-public class CalculatorHistoryStub implements CalculatorHistory {
+public class CalculatorLogStub implements CalculatorLog {
+    public CalculatorLogStub() {}
+    public CalculatorLogStub(StringBuilder stringBuilder) {}
+
     @Override
     public void addToLog(String command) {
         System.out.println("[DEBUG] Command logged: '" + command + "'");

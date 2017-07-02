@@ -1,13 +1,12 @@
 package com.oop;
 
 public class Calculator {
-    private CalculatorHistory log;
+    private CalculatorLog log;
 
-    //Dependency Injection: setter injection
-    public void setLog(CalculatorHistory log) {
+    //DI: constructor injection
+    public Calculator(CalculatorLog log) {
         this.log = log;
     }
-
 
     public int add(int a, int b) {
         log.addToLog(a + " add " + b);
