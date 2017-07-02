@@ -9,9 +9,7 @@ public class CalculatorApp {
         int position = 0;
 
         CalculatorOperation calc1 = new CalculatorOperation();
-        CalculatorOperation calc2 = new CalculatorOperation();
-        calc1.setLog(new StubLogger());
-        calc2.setLog(new StubLogger());
+        calc1.setLog(new DecoratingStringBuilderCalculatorLogger(new StringBuilder("Test StringBuilder\n")));
 
         for (String current : args) {
             switch (position++) {
@@ -24,7 +22,6 @@ public class CalculatorApp {
                 case 2: {
                     arg2 = current;
                     calc1.operation(calc1, command, arg1, arg2);
-                    calc2.operation(calc2, command, arg2, arg1);
                     position = 0;
                 }
             }
@@ -34,14 +31,6 @@ public class CalculatorApp {
             System.out.println(showLog);
         }
         System.out.println("\n");
-
-        for (String showLog : calc2.showLog()) {
-            System.out.println(showLog);
-        }
-
-
-
     }
 }
-
 

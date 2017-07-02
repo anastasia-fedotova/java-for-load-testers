@@ -12,7 +12,7 @@ import static java.lang.Double.parseDouble;
 class CalculatorOperation {
     private double memoryButton = 0;
     private double storeCalculation = 0;
-    private CalculatorLogger log = new LogHistory();
+    private CalculatorLogger log = new StringBuilderCalculatorLogger();
 
     private double checkRange(double a) {
         if ((a > -10.0) & (a < 10.0)) {
@@ -67,7 +67,7 @@ class CalculatorOperation {
         return module;
     }
 
-    double doCalculate(String command, double arg1, double arg2) {
+    private double doCalculate(String command, double arg1, double arg2) {
 
         switch (command) {
             case "add":
@@ -82,11 +82,11 @@ class CalculatorOperation {
         return 0;
     }
 
-    void addToLog(String metod, double a, double b, double buf) {
+    private void addToLog(String metod, double a, double b, double buf) {
         log.addToLog(metod, a, b, buf);
     }
 
-    public String[] showLog() {
+    String[] showLog() {
         return log.getLog();
     }
 
@@ -117,7 +117,7 @@ class CalculatorOperation {
                 buffer);
     }
 
-    public void setLog(CalculatorLogger log){
+    void setLog(CalculatorLogger log){
         this.log = log;
     }
 }
