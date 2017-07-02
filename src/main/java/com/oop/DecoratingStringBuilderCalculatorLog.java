@@ -18,8 +18,7 @@ public class DecoratingStringBuilderCalculatorLog
     @Override
     @Deprecated
     @SuppressWarnings("unchecked")
-    public void addToLog(String command) throws Exception {
+    public void addToLog(String command) {
         super.addToLog("[PROD] " + command);
-        throw new Exception();
     }
 }

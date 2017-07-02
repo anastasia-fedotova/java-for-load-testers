@@ -2,28 +2,32 @@ package com.oop;
 
 public class CalculatorRunner {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator(null);
+        Calculator calculator = new Calculator(
+                new DecoratingStringBuilderCalculatorLog(
+                        new StringBuilder()
+                )
+        );
 
-        /**
-         * 1. DecoratingStringBuilderCalculatorLog
-         * 2. DI for StringBuilder
-         */
+        new Thread(new LoadWorker(calculator)).start();
+        new Thread(new LoadWorker(calculator)).start();
+        new Thread(new LoadWorker(calculator)).start();
+        new Thread(new LoadWorker(calculator)).start();
+    }
+}
 
-        calculator.add(1, 1);
-        calculator.add(2, 2);
+class LoadWorker implements Runnable {
+    private Calculator calculator;
 
-        try {
-            System.out.println("try entering");
-            calculator.div(1, 0); //eeee
-            System.out.println("try exiting");
-            ///
-        } catch (ArithmeticException | NullPointerException e) {
+    public LoadWorker(Calculator calculator) {
+        this.calculator = calculator;
+    }
 
-        } finally {
-
+    @Override
+    public void run() {
+        for (int counter = 0; counter < 10_000; counter++) {
+            calculator.add(counter, counter);
         }
-        //???
-        System.out.println("!!!!!!!");
+
         for (String logEntry : calculator.getLog()) {
             System.out.println(logEntry);
         }

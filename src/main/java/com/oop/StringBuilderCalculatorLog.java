@@ -17,7 +17,7 @@ public class StringBuilderCalculatorLog implements CalculatorLog {
     }
 
     @Override
-    public void addToLog(String command) throws Exception {
+    public synchronized void addToLog(String command) {
         log.append(command);
         log.append("\n");
     }
